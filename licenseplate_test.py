@@ -3,7 +3,8 @@ import cv2
 import os
 
 person_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
-plate_model = torch.hub.load('yolov5', 'custom', path="runs/train/exp12/weights/best.pt", source='local')
+plate_model = torch.hub.load('yolov5', 'custom', path="best_fixed.pt", source='local')
+
 
 image_folder = "images"
 output_dir = 'output_images'

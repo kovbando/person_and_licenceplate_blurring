@@ -6,7 +6,7 @@
 - Pytorch: On Windows, run  
   `pip3 install torch torchvision torchaudio`
 - OpenCV:  
-  `pip install opencv-python`
+  `pip install opencv-python dill`
 - YOLOv5:  
   In the project's folder `person_and_licenceplate_blurring`, run:  
   `pip install -U ultralytics`
