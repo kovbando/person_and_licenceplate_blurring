@@ -1,9 +1,17 @@
 import torch
 import cv2
 import os
+import warnings
 
 person_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 plate_model = torch.hub.load('yolov5', 'custom', path="best_fixed.pt", source='local')
+
+#this is to supress "FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead."
+warnings.filterwarnings(
+    "ignore", 
+    category=FutureWarning, 
+    message=r"`torch\.cuda\.amp\.autocast\(.*\)` is deprecated"
+)
 
 
 image_folder = "images"
