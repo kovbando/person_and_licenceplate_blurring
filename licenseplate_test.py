@@ -27,7 +27,6 @@ output_dir = args.output_dir
 torch.serialization.add_safe_globals(['models.yolo.Model'])
 
 # Load models
-#person_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 person_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True, force_reload=True)
 plate_model = torch.hub.load('yolov5', 'custom', path="best_fixed.pt", source='local')
 
