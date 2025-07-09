@@ -1,4 +1,5 @@
 # person_and_licenceplate_blurring
+Useful tool to load pictures from a folder and blur all detected persons and licenseplates, for privacy reasons.
 
 ## Installation:
 - You will need Python 3.9 or later
