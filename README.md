@@ -1,7 +1,7 @@
 # person_and_licenceplate_blurring
 
 ## Installation:
-- Python 3.9 or later\
+- Python 3.9 or later
 - Preferably use a python virtual environment, and install dependencies via pip\
   `pip install -r requirements.txt`
 - YOLOv5:  
