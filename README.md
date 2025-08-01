@@ -3,7 +3,8 @@ Useful tool to load pictures from a folder and blur all detected persons and lic
 
 ## Installation:
 - You will need Python 3.9 or later
-- Clone this repository
+- Clone this repository **with submodules**  
+  run the following to clone everything: `git clone --recurse-submodules https://github.com/kovbando/person_and_licenceplate_blurring.git`
 - Preferably use a python virtual environment, and install dependencies via pip\
   `pip install -r requirements.txt`
 - YOLOv5:  
