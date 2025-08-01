@@ -10,9 +10,10 @@ Useful tool to load pictures from a folder and blur all detected persons and lic
   In the project's folder `person_and_licenceplate_blurring`, run:  
   `pip install -U ultralytics`\
   *This step is probably redundant, because ultralytics should be installed by the requirements.txt*
-- Clone YOLOv5 repository:  
+- ~~Clone YOLOv5 repository:  
   In the project's folder `person_and_licenceplate_blurring`, run:  
-  `git clone https://github.com/ultralytics/yolov5`
+  `git clone https://github.com/ultralytics/yolov5`~~  
+- YOLOv5 was added as a submodule, so no need to clone it separately
 
 ## Usage:
 
