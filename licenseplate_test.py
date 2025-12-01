@@ -4,6 +4,7 @@ import os
 import argparse
 import warnings
 import sys
+from tqdm import tqdm
 
 # Suppress all FutureWarnings globally
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -52,7 +53,7 @@ person_class_id = 0
 
 try:
     # Process each image
-    for image_name in image_files:
+    for image_name in tqdm(image_files, desc="Processing images", unit="img"):
         img_path = os.path.join(image_folder, image_name)
         img = cv2.imread(img_path)
     
@@ -80,7 +81,6 @@ try:
         output_image_path = os.path.join(output_dir, base_name + '.jpg')
 #        cv2.imwrite(output_image_path, img)
         cv2.imwrite(output_image_path, img, [int(cv2.IMWRITE_JPEG_QUALITY), 90])
-        print(f"{output_image_path} saved")
 except KeyboardInterrupt:
     print("\nProcessing interrupted by user. Exiting gracefully.")
     sys.exit(0)
