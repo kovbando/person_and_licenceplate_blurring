@@ -12,6 +12,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 parser = argparse.ArgumentParser(description="Blur persons and license plates in images.")
 parser.add_argument('-i', '--image_folder', type=str, required=True, help='Path to the folder with input images')
 parser.add_argument('-o', '--output_dir', type=str, required=True, help='Path to the folder to save blurred images')
+parser.add_argument('-f', '--force', action='store_true', help='Force reload the person detection model')
 
 # If no arguments are provided, print help and exit
 if len(sys.argv) == 1:
@@ -27,7 +28,7 @@ output_dir = args.output_dir
 torch.serialization.add_safe_globals(['models.yolo.Model'])
 
 # Load models
-person_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
+person_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True, force_reload=args.force)
 plate_model = torch.hub.load('yolov5', 'custom', path="best_fixed.pt", source='local')
 
 # Ensure output directory exists
