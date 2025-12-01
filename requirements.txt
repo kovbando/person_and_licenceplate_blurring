@@ -1,10 +1,21 @@
-# requiirements for person and licence plate blurring
-# Install PyTorch with CUDA support from the CUDA-specific index
-# For CPU-only, use: torch torchvision torchaudio
---index-url https://download.pytorch.org/whl/cu121
+# Requirements for person and licence plate blurring
+# 
+# INSTALLATION INSTRUCTIONS:
+# To ensure PyTorch with CUDA support is installed correctly, use:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+#   pip install -r requirements.txt
+#
+# OR install everything at once with:
+#   pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu121
+#
+# For CPU-only PyTorch, just use: pip install -r requirements.txt
+
+# PyTorch packages (will use CUDA 12.1 if --extra-index-url is provided)
 torch
 torchvision
 torchaudio
+
+# Other dependencies
 opencv-python
 dill
 ultralytics
@@ -16,7 +27,6 @@ ultralytics
 gitpython>=3.1.30
 matplotlib>=3.3
 numpy>=1.23.5
-opencv-python>=4.1.1
 pillow>=10.3.0
 psutil  # system resources
 PyYAML>=5.3.1
