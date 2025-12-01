@@ -27,9 +27,18 @@ output_dir = args.output_dir
 # Allowlist YOLOv5 model class for torch.load (PyTorch 2.6+)
 torch.serialization.add_safe_globals(['models.yolo.Model'])
 
+# Check for GPU availability
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+if torch.cuda.is_available():
+    print(f"Using device: {device} ({torch.cuda.get_device_name(0)})")
+else:
+    print(f"Using device: {device} (GPU not available)")
+
 # Load models
 person_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True, force_reload=args.force)
+person_model.to(device)
 plate_model = torch.hub.load('yolov5', 'custom', path="best_fixed.pt", source='local')
+plate_model.to(device)
 
 # Ensure output directory exists
 if not os.path.exists(output_dir):
