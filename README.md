@@ -2,24 +2,26 @@
 Useful tool to load pictures from a folder and blur all detected persons and licenseplates, for privacy reasons.
 
 ## Installation:
-- You will need Python 3.9 or later
+- You will need Python 3.9 or later, 3.10 recommended
 - Clone this repository **with submodules**  
   run the following to clone everything: `git clone --recurse-submodules https://github.com/kovbando/person_and_licenceplate_blurring.git`
 - Preferably use a python virtual environment, and install dependencies via pip\
   `pip install -r requirements.txt`
+
+- *The steps below are probably redundant, because everything shouldd be handled by the submodule inclusion and requirements.txt*
 - YOLOv5:  
   In the project's folder `person_and_licenceplate_blurring`, run:  
   `pip install -U ultralytics`\
-  *This step is probably redundant, because ultralytics should be installed by the requirements.txt*
-- ~~Clone YOLOv5 repository:  
+- Clone YOLOv5 repository:  
   In the project's folder `person_and_licenceplate_blurring`, run:  
-  `git clone https://github.com/ultralytics/yolov5`~~  
+  `git clone https://github.com/ultralytics/yolov5`
 - YOLOv5 was added as a submodule, so no need to clone it separately
 
 ## Usage:
 
-After successfully installind all dependencies, you can run `python licenseplate_test.py -i <input_folder> -o <output_folder>`\
-This will load all images, regardless of their name or format from the **input_folder**, apply the blurring on all detected licenseplates and persons, and save the resulting image in the **output_folder** as *.jpg*.
+After successfully installing all dependencies, you can run `python licenseplate_test.py -i <input_folder> -o <output_folder> (-f)`\
+This will load all images, regardless of their name or format from the **input_folder**, apply the blurring on all detected licenseplates and persons, and save the resulting image in the **output_folder** as *.jpg*.\
+If you enecounter some error regarding the loading of the models, first thing to try is to add the `-f` option to your commmand. It will force a reload of the models, and probably fix any issues.
 
 ## Notes:
 
