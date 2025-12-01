@@ -5,9 +5,11 @@ Useful tool to load pictures from a folder and blur all detected persons and lic
 - You will need Python 3.9 or later, 3.10 recommended
 - Clone this repository **with submodules**  
   run the following to clone everything: `git clone --recurse-submodules https://github.com/kovbando/person_and_licenceplate_blurring.git`
-- Preferably use a python virtual environment, and install dependencies via pip\
+- Preferably use a python virtual environment. `python -m venv venv` then activate your venv!
+- If you install all requirements the default version of pytorch will **NOT** use CUDA.\
+ If you have a CUDA capable system run `pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121` before instaalling everything else in the next step! 
+-  and install dependencies via pip\
   `pip install -r requirements.txt`
-
 - *The steps below are probably redundant, because everything shouldd be handled by the submodule inclusion and requirements.txt*
 - YOLOv5:  
   In the project's folder `person_and_licenceplate_blurring`, run:  
