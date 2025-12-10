@@ -38,7 +38,7 @@ else:
 # Load models
 person_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True, force_reload=args.force)
 person_model.to(device)
-plate_model = torch.hub.load('yolov5', 'custom', path="training/best.pt", source='local')
+plate_model = torch.hub.load('yolov5', 'custom', path="best.pt", source='local')
 plate_model.to(device)
 
 # Ensure output directory exists
