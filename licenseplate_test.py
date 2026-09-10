@@ -38,6 +38,13 @@ else:
 # Load models
 person_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True, force_reload=args.force)
 person_model.to(device)
+
+# Purge cached 'utils'/'models' modules from the ultralytics/yolov5 hub download so the
+# local yolov5 submodule (a different, pinned version) imports its own code, not the cached one.
+for mod_name in list(sys.modules):
+    if mod_name == 'utils' or mod_name.startswith('utils.') or mod_name == 'models' or mod_name.startswith('models.'):
+        del sys.modules[mod_name]
+
 plate_model = torch.hub.load('yolov5', 'custom', path="best.pt", source='local')
 plate_model.to(device)
 
