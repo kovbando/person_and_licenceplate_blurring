@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#Don't forget to activate your virtual environment before running this script
 python licenseplate_test.py -i /mnt/s/cutbag/syncd/image_0 -o /mnt/s/cutbag/syncd/image_0_blur &
 python licenseplate_test.py -i /mnt/s/cutbag/syncd/image_1 -o /mnt/s/cutbag/syncd/image_1_blur &
 python licenseplate_test.py -i /mnt/s/cutbag/syncd/image_2 -o /mnt/s/cutbag/syncd/image_2_blur &
